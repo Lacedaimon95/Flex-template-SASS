@@ -1,0 +1,434 @@
+// GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+// VARIABLES
+
+$fontSize:16px;
+$padding: 50px 20px;
+$transition: ease-in-out .4s;
+$red:orangered;
+$gray:rgb(167,167,167);
+$white:white;
+$black:black;
+
+// DEAFULT STYLE
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Gugi' , cursive;
+    line-height: 1.5;
+    font-size: $fontSize;
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Kaushan Script', cursive;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    &:hover{
+        transition: $transition;
+    }
+}
+
+@mixin btn {
+    background-color: $red;
+    color: $white;
+    padding: 15px 20px;
+    border: none;
+    font-style: 1.1rem;
+    margin: 10px 0px;
+
+    &:hover{
+        transition: $transition;
+        background-color: $gray;
+        cursor: pointer;
+    }
+}
+
+.line{
+    content: "";
+    display: block;
+    background-color: $red;
+    margin: 10px 0px;
+    width: 100px;
+    height: 2px;
+}
+
+@mixin backgroundImg ($img,$position, $size,$width,$height) {
+    background-image: $img;
+    background-position: $position;
+    background-size: $size;
+    background-repeat: no-repeat;
+    width: $width;
+    height: $height;
+}
+
+@mixin flex($flex,$justify,$align,$wrap,$direction){
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+}
+
+@mixin gridPosition ($area){
+    grid-area: $area;
+    // grid-row: $row;
+    // grid-column: $column;
+}
+
+// HEADER
+
+header{
+    @include backgroundImg(url(img/header.jpg),center,cover,100%,100vh);
+
+    nav{
+        background-color: $white;
+        width: 95%;
+        position: relative;
+        top: 30px;
+        margin: auto;
+        @include flex(flex,space-between,center,wrap,row);
+
+        @media(max-width:768px){
+            width: 100%;
+            top: 0;
+        }
+
+        .logo{
+            color: $black;
+            line-height: 0.9;
+
+            &::first-letter{
+                color: $red;
+            }
+
+            span{
+                font-size: 2.5rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+            }
+        }
+
+        ul{
+            @include flex(flex,space-between,center,wrap,row);
+
+            li{
+                padding:0px 20px;
+
+                @media(max-width:768px){
+                    padding: 0px 5px;
+                }
+
+                a{
+                    text-transform: uppercase;
+                    color: $gray;
+
+                    @media(max-width:768px){
+                        font-size: 0.9rem;
+                    }
+
+                    &:hover{
+                        color: $red;
+                    }
+                }
+            }
+
+        }
+    }
+
+    hgroup{
+        @include flex(flex,center,center,wrap,column);
+        height: 90vh;
+        text-align: center;
+
+        h1{
+            font-size: 3rem;
+            padding-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+
+            @media(max-width:768px){
+                font-size: 2rem;
+            }
+        }
+
+        h5{
+            font-size: 1.1rem;
+            padding-bottom: 10px;
+
+            @media(max-width:768px){
+                font-size: 1rem;
+            }
+        }
+
+        button{
+            @include btn;
+        }
+    }
+}
+
+// ABOUT
+
+.about{
+    @include flex(flex,center,center,wrap,row);
+    
+    article{
+        flex: 0 0 50%;
+        height: 400px;
+
+        @media(max-width:768px){
+            flex: 0 0 100%;
+        }
+
+        &:first-child{
+            padding: 100px 20px;
+
+            p{
+                &:first-child{
+                    color: $red;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+
+                    &::after{
+                    @extend .line;
+                    }
+                }
+            }
+
+            h3{
+                font-size: 1.5rem;
+                padding: 15px 0px;
+            }
+
+            button{
+                @include btn;
+                margin-top: 10px;
+            }
+        }
+
+        &:last-child{
+            img{
+                width: 100%;
+                height: 400px;
+            }
+        }
+    }
+}
+
+
+// NUMBERS
+
+.numbers{
+    @include backgroundImg(url(img/section8.jpg),cover,center,100%,auto);
+    @include flex(flex,space-between,center,wrap,row);
+  
+    article{
+        flex: 0 0 22%;
+        text-align: center;
+        padding: $padding;
+
+        @media(max-width:768px){
+            flex: 0 0 50%;
+        }
+
+        span{
+            color: $red;
+            font-size: 2rem;
+            font-style: italic;
+        }
+
+        h5{
+            font-size: 1.3rem;
+            padding: 10px 0px;
+        }
+    }
+}
+
+
+// SERVICES
+
+
+.services{
+    padding: $padding;
+    text-align: center;
+
+    span{
+        font-size: 1.3rem;
+        color: $red;
+    }
+
+    h3{
+        font-size: 3rem;
+        padding: 20px 0px;
+    }
+
+    .row{
+        @include flex(flex,space-evenly,center,wrap,row);
+        padding: 50px 0px;
+
+        article{
+            flex: 0 0 30%;
+            padding: 10px 0px;
+
+            @media(max-width:768px){
+                flex: 0 0 100%;
+                margin-top: 20px;
+            }
+
+            h4{
+                font-size: 1.7rem;
+            }
+
+            ul{
+                li{
+                    padding: 10px 0px;
+                    font-size: 1.1rem;
+                }
+            }
+
+            &:nth-child(2){
+                box-shadow: 0 0 10px $gray;
+            }
+
+            &:hover{
+                transform: rotate(360deg);
+                transition-duration: 2s;
+            }
+        }
+    }
+}
+
+// BACKGROUND
+
+
+.background{
+    @include backgroundImg(url(img/three.jpg),center,cover,100%,60vh);
+    
+    hgroup{
+        @include flex(flex,center,flex-end,wrap,column);
+
+        text-align: right;
+        color: $white;
+        padding-right: 50px;
+        height: 60vh;
+
+        p{
+            &:first-child{
+                color: $red;
+                font-size: 1.4rem;
+                font-weight: 700;
+            }
+        }
+
+        h3{
+            padding: 20px 0px;
+            font-size: 2rem;
+        }
+
+        button{
+            @include btn;
+            margin-top: 20px;
+        }
+    }
+}
+
+// GALERY
+
+
+.galery{
+    article{
+        background-color: $red;
+        text-align: center;
+        color: $white;
+        padding: 20px 0px;
+
+        p{
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        h3{
+            font-size: 2rem;
+        }
+    }
+
+
+    .grid{
+        display: grid;
+        grid-template-columns: 50% 25% 1fr;
+        grid-template-rows: 40vh 40vh;
+        background-color: $gray;
+
+
+        span{
+
+            &:hover{
+                transform: scale(0.9);
+                transition-duration: 2s;
+            }
+
+            &:nth-child(1){
+                // @include backgroundImg(url(img/people3.jpg),center,cover,100%,auto);
+                @include backgroundImg(url(img/people3.jpg),center ,cover ,100% ,100% );
+                // @include gridPosition(1/3,1/2);
+                @include gridPosition(1/1/3/2);
+                // grid-area: 1/1/3/2;
+                // grid-row: 1/3;
+                // grid-column: 1/2;
+            }
+
+            &:nth-child(2){
+                // @include backgroundImg(url(img/project3.jpg),center,cover,100%,auto);
+                // @include gridPosition(1/2,2/3);
+                // grid-row: 1/2;
+                // grid-column: 2/3;
+            }
+
+            &:nth-child(3){
+                // @include backgroundImg(url(img/project4.jpg),center,cover,100%,auto);
+                // @include gridPosition(2/3,2/3);
+                // grid-row: 2/3;
+                // grid-column: 2/3;
+            }
+
+            &:nth-child(4){
+                // @include backgroundImg(url(img/project5.jpg),center,cover,100%,auto);
+                // @include gridPosition(1/2,3/4);
+                // grid-row: 1/2;
+                // grid-column: 3/4;
+            }
+
+            &:nth-child(5){
+                // @include backgroundImg(url(img/people2.jpg),center,cover,100%,auto);
+                // @include gridPosition(2/3,3/4);
+                // grid-row: 2/3;
+                // grid-column: 3/4;
+            }
+        }
+    }
+}
+
+
+// FOOTER
+
+footer{
+    background-color: $red;
+    color: $white;
+    font-size: 2rem;
+    padding: $padding;
+    text-align: center;
+}
+
