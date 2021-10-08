@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Gugi' , cursive;
+  line-height: 1.5;
+  font-size: 16px;
+  scroll-behavior: smooth; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kaushan Script', cursive; }
+
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    transition: ease-in-out 0.4s; }
+
+.line, .about article:first-child p:first-child::after {
+  content: "";
+  display: block;
+  background-color: orangered;
+  margin: 10px 0px;
+  width: 100px;
+  height: 2px; }
+
+header {
+  background-image: url(img/header.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; }
+  header nav {
+    background-color: white;
+    width: 95%;
+    position: relative;
+    top: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row; }
+    @media (max-width: 768px) {
+      header nav {
+        width: 100%;
+        top: 0; } }
+    header nav .logo {
+      color: black;
+      line-height: 0.9; }
+      header nav .logo::first-letter {
+        color: orangered; }
+      header nav .logo span {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 2px; }
+    header nav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: row; }
+      header nav ul li {
+        padding: 0px 20px; }
+        @media (max-width: 768px) {
+          header nav ul li {
+            padding: 0px 5px; } }
+        header nav ul li a {
+          text-transform: uppercase;
+          color: #a7a7a7; }
+          @media (max-width: 768px) {
+            header nav ul li a {
+              font-size: 0.9rem; } }
+          header nav ul li a:hover {
+            color: orangered; }
+  header hgroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 90vh;
+    text-align: center; }
+    header hgroup h1 {
+      font-size: 3rem;
+      padding-bottom: 10px;
+      letter-spacing: 2px;
+      font-weight: 700; }
+      @media (max-width: 768px) {
+        header hgroup h1 {
+          font-size: 2rem; } }
+    header hgroup h5 {
+      font-size: 1.1rem;
+      padding-bottom: 10px; }
+      @media (max-width: 768px) {
+        header hgroup h5 {
+          font-size: 1rem; } }
+    header hgroup button {
+      background-color: orangered;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      font-style: 1.1rem;
+      margin: 10px 0px; }
+      header hgroup button:hover {
+        transition: ease-in-out 0.4s;
+        background-color: #a7a7a7;
+        cursor: pointer; }
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row; }
+  .about article {
+    flex: 0 0 50%;
+    height: 400px; }
+    @media (max-width: 768px) {
+      .about article {
+        flex: 0 0 100%; } }
+    .about article:first-child {
+      padding: 100px 20px; }
+      .about article:first-child p:first-child {
+        color: orangered;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 700; }
+      .about article:first-child h3 {
+        font-size: 1.5rem;
+        padding: 15px 0px; }
+      .about article:first-child button {
+        background-color: orangered;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        font-style: 1.1rem;
+        margin: 10px 0px;
+        margin-top: 10px; }
+        .about article:first-child button:hover {
+          transition: ease-in-out 0.4s;
+          background-color: #a7a7a7;
+          cursor: pointer; }
+    .about article:last-child img {
+      width: 100%;
+      height: 400px; }
+
+.numbers {
+  background-image: url(img/section8.jpg);
+  background-position: cover;
+  background-size: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row; }
+  .numbers article {
+    flex: 0 0 22%;
+    text-align: center;
+    padding: 50px 20px; }
+    @media (max-width: 768px) {
+      .numbers article {
+        flex: 0 0 50%; } }
+    .numbers article span {
+      color: orangered;
+      font-size: 2rem;
+      font-style: italic; }
+    .numbers article h5 {
+      font-size: 1.3rem;
+      padding: 10px 0px; }
+
+.services {
+  padding: 50px 20px;
+  text-align: center; }
+  .services span {
+    font-size: 1.3rem;
+    color: orangered; }
+  .services h3 {
+    font-size: 3rem;
+    padding: 20px 0px; }
+  .services .row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 50px 0px; }
+    .services .row article {
+      flex: 0 0 30%;
+      padding: 10px 0px; }
+      @media (max-width: 768px) {
+        .services .row article {
+          flex: 0 0 100%;
+          margin-top: 20px; } }
+      .services .row article h4 {
+        font-size: 1.7rem; }
+      .services .row article ul li {
+        padding: 10px 0px;
+        font-size: 1.1rem; }
+      .services .row article:nth-child(2) {
+        box-shadow: 0 0 10px #a7a7a7; }
+      .services .row article:hover {
+        transform: rotate(360deg);
+        transition-duration: 2s; }
+
+.background {
+  background-image: url(img/three.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vh; }
+  .background hgroup {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: right;
+    color: white;
+    padding-right: 50px;
+    height: 60vh; }
+    .background hgroup p:first-child {
+      color: orangered;
+      font-size: 1.4rem;
+      font-weight: 700; }
+    .background hgroup h3 {
+      padding: 20px 0px;
+      font-size: 2rem; }
+    .background hgroup button {
+      background-color: orangered;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      font-style: 1.1rem;
+      margin: 10px 0px;
+      margin-top: 20px; }
+      .background hgroup button:hover {
+        transition: ease-in-out 0.4s;
+        background-color: #a7a7a7;
+        cursor: pointer; }
+
+.galery article {
+  background-color: orangered;
+  text-align: center;
+  color: white;
+  padding: 20px 0px; }
+  .galery article p {
+    font-weight: 600;
+    font-size: 1.2rem; }
+  .galery article h3 {
+    font-size: 2rem; }
+.galery .grid {
+  display: grid;
+  grid-template-columns: 50% 25% 1fr;
+  grid-template-rows: 40vh 40vh;
+  background-color: #a7a7a7; }
+  .galery .grid span:hover {
+    transform: scale(0.9);
+    transition-duration: 2s; }
+  .galery .grid span:nth-child(1) {
+    background-image: url(img/people3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-row: 1/3;
+    grid-column: 1/2; }
+  .galery .grid span:nth-child(2) {
+    background-image: url(img/project3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    grid-row: 1/2;
+    grid-column: 2/3; }
+  .galery .grid span:nth-child(3) {
+    background-image: url(img/project4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    grid-row: 2/3;
+    grid-column: 2/3; }
+  .galery .grid span:nth-child(4) {
+    background-image: url(img/project5.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    grid-row: 1/2;
+    grid-column: 3/4; }
+  .galery .grid span:nth-child(5) {
+    background-image: url(img/people2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    grid-row: 2/3;
+    grid-column: 3/4; }
+
+footer {
+  background-color: orangered;
+  color: white;
+  font-size: 2rem;
+  padding: 50px 20px;
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
